@@ -9,6 +9,10 @@ from ..models import Employee
 
 @auth.route('/register', methods=['GET', 'POST'])
 def register():
+    """
+    Handle requests to the /register route
+    Add an employee to the database through the registration form
+    """
     form = RegistrationForm()
     if form.validate_on_submit():
         employee = Employee(email=form.email.data,
@@ -31,6 +35,10 @@ def register():
 
 @auth.route('/login', methods=['GET', 'POST'])
 def login():
+    """
+    Handle requests to the /login route
+    Log an employee in through the login form
+    """
     form = LoginForm()
     if form.validate_on_submit():
 
@@ -56,6 +64,10 @@ def login():
 @auth.route('/logout')
 @login_required
 def logout():
+    """
+    Handle requests to the /logout route
+    Log an employee out through the logout link
+    """
     logout_user()
     flash('You have successfully been logged out.')
 

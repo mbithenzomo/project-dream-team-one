@@ -6,7 +6,7 @@ from app import db, login_manager
 
 class Employee(UserMixin, db.Model):
     """
-    Creates an Employee table
+    Create an Employee table
     """
 
     # Ensures table will be named in plural and not in singular
@@ -24,20 +24,20 @@ class Employee(UserMixin, db.Model):
     @property
     def password(self):
         """
-        Prevents pasword from being accessed
+        Prevent pasword from being accessed
         """
         raise AttributeError('password is not a readable attribute.')
 
     @password.setter
     def password(self, password):
         """
-        Sets password to a hashed password
+        Set password to a hashed password
         """
         self.password_hash = generate_password_hash(password)
 
     def verify_password(self, password):
         """
-        Checks if hashed password matches actual password
+        Check if hashed password matches actual password
         """
         return check_password_hash(self.password_hash, password)
 
@@ -54,7 +54,7 @@ def load_user(user_id):
 
 class Department(db.Model):
     """
-    Creates a Department table
+    Create a Department table
     """
 
     __tablename__ = 'departments'
@@ -72,7 +72,7 @@ class Department(db.Model):
 
 class Role(db.Model):
     """
-    Creates a Role table
+    Create a Role table
     """
 
     __tablename__ = 'roles'
