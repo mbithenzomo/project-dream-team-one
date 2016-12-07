@@ -22,13 +22,13 @@
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <ul class="nav navbar-nav navbar-right">
                   {% if current_user.is_authenticated %}
-                  <li><a href="{{ url_for('home.dashboard') }}">Dashboard</a></li>
-                  <li><a href="{{ url_for('auth.logout') }}">Logout</a></li>
-                  <li><a><i class="fa fa-user"></i>  Hi, {{ current_user.username }}!</a></li>
+                    <li><a href="{{ url_for('home.dashboard') }}">Dashboard</a></li>
+                    <li><a href="{{ url_for('auth.logout') }}">Logout</a></li>
+                    <li><a><i class="fa fa-user"></i>  Hi, {{ current_user.username }}!</a></li>
                   {% else %}
-                  <li><a href="{{ url_for('home.homepage') }}">Home</a></li>
-                  <li><a href="{{ url_for('auth.register') }}">Register</a></li>
-                  <li><a href="{{ url_for('auth.login') }}">Login</a></li>
+                    <li><a href="{{ url_for('home.homepage') }}">Home</a></li>
+                    <li><a href="{{ url_for('auth.register') }}">Register</a></li>
+                    <li><a href="{{ url_for('auth.login') }}">Login</a></li>
                   {% endif %}
               </ul>
           </div>
@@ -47,11 +47,11 @@
                         <li><a href="{{ url_for('home.homepage') }}">Home</a></li>
                         <li class="footer-menu-divider">&sdot;</li>
                         {% if current_user.is_authenticated %}
-                        <li><a href="{{ url_for('auth.logout') }}">Logout</a></li>
+                          <li><a href="{{ url_for('auth.logout') }}">Logout</a></li>
                         {% else %}
-                        <li><a href="{{ url_for('auth.register') }}">Register</a></li>
-                        <li class="footer-menu-divider">&sdot;</li>
-                        <li><a href="{{ url_for('auth.login') }}">Login</a></li>
+                          <li><a href="{{ url_for('auth.register') }}">Register</a></li>
+                          <li class="footer-menu-divider">&sdot;</li>
+                          <li><a href="{{ url_for('auth.login') }}">Login</a></li>
                         {% endif %}
                     </ul>
                     <p class="copyright text-muted small">Copyright &copy; 2016. All Rights Reserved</p>
