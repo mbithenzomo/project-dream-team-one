@@ -42,8 +42,7 @@ class Employee(UserMixin, db.Model):
         return check_password_hash(self.password_hash, password)
 
     def __repr__(self):
-        full_name = self.first_name + ' ' + self.last_name
-        return '<Employee: {}>'.format(full_name)
+        return '<Employee: {}>'.format(self.username)
 
 
 # Set up user_loader
