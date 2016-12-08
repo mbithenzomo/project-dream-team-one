@@ -4,10 +4,11 @@
 {% block title %}Login{% endblock %}
 {% block body %}
 <div class="content-section">
+  <br/>
+  {{ utils.flashed_messages() }}
+  <br/>
   <div class="center">
     <h1>Login to your account</h1>
-    <br/>
-    {{ utils.flashed_messages() }}
     <br/>
     {{ wtf.quick_form(form) }}
   </div>
