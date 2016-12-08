@@ -83,10 +83,6 @@ class Role(db.Model):
     employee = db.relationship('Employee',
                                backref=db.backref('employee_roles',
                                                   lazy='dynamic'))
-    dept_id = db.Column(db.Integer, db.ForeignKey('departments.id'))
-    department = db.relationship('Department',
-                                 backref=db.backref('departments',
-                                                    lazy='dynamic'))
 
     def __repr__(self):
         return '<Role: {}>'.format(self.name)
