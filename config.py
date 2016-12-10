@@ -1,9 +1,9 @@
 class Config(object):
     """
-    Default configurations
+    Common configurations
     """
 
-    TESTING = False
+    # Put any configurations here that are common across all environments
 
 
 class DevelopmentConfig(Config):
@@ -13,7 +13,6 @@ class DevelopmentConfig(Config):
 
     DEBUG = True
     SQLALCHEMY_ECHO = True
-    SQLALCHEMY_TRACK_MODIFICATIONS = True
 
 
 class ProductionConfig(Config):
@@ -22,10 +21,6 @@ class ProductionConfig(Config):
     """
 
     DEBUG = False
-    SQLALCHEMY_TRACK_MODIFICATIONS = True
-
-# You can include a TestingConfig class as well for running your tests.
-# This is however outside the scope of this tutorial.
 
 app_config = {
     'development': DevelopmentConfig,
